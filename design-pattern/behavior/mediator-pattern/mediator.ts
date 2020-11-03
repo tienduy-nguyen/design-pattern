@@ -1,6 +1,6 @@
 
 // mediator pattern
-import { consoleColor } from '../utils';
+import { consoleColor } from './utils';
 
 interface IMediator {
   sendMessage(msg: string, from: any, to?: any): void
