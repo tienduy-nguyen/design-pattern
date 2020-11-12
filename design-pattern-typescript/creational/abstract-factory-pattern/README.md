@@ -70,3 +70,19 @@ console.log(button.render());
 
 
 [Ref](https://dev.to/anuraghazra/design-patterns-everyday-53m0#Day-2)
+
+
+---
+
+## Overview
+
+Abstract factory is a specific pattern, which used to create an abstract object with an abstract factory. That basically means, that you can put every factory that implements the Abstract Factory and it would return an instance, that implements the Abstract Object interface.
+
+
+## Usage
+
+You define two interfaces: an Abstract Factory’s one and a Subject’s one. Then, you implement whatever you want and expose the interface. A client doesn’t know what is inside, he just gets an object with implement methods of an interface.
+
+## Reference
+
+[Ref](https://www.netguru.com/codestories/top-5-most-used-patterns-in-oop-with-typescript)
