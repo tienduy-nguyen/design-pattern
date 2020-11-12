@@ -1,1 +1,1 @@
-# Tips & Tricks in JavaScript
+# Design pattern
