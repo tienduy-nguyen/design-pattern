@@ -7,6 +7,7 @@ A good real world analogy for singleton is Government, a country can only have o
 
 ### Example
 
+Ex1: 
 ```js
 class Singleton {
   static instance = new Singleton();
@@ -24,4 +25,28 @@ let instance2 = Singleton.getInstance();
 console.log(instance1 === instance2); // true
 
 instance2.showMessage();
+```
+
+Ex2:
+
+```ts
+class Singleton {
+  private static _instance: Singleton | null;
+  private constructor() {}
+  static getInstance() {
+    if (!this._instance) {
+      this._instance = new Singleton();
+    }
+    return this._instance;
+  }
+}
+
+console.log(Singleton.getInstance() === Singleton.getInstance());
+//true
+
+```
+
+Ex3:
+```ts
+
 ```

@@ -10,7 +10,7 @@ interface IObserver {
 }
 
 class Publisher implements IPublisher {
-  subscribers: IObserver[];
+  subscribers: IObserver[] = [];
   state: any;
   constructor(state: any = {}) {
     this.subscribers = [];
@@ -29,7 +29,7 @@ class Publisher implements IPublisher {
   }
 
   notifyObservers() {
-    this.subscribers.forEach(subs => {
+    this.subscribers.forEach((subs) => {
       subs.notify(this.state);
     });
   }
@@ -43,9 +43,12 @@ class Publisher implements IPublisher {
 class UserInterface implements IObserver {
   renderTodos(todos) {
     console.clear();
-    todos.forEach(todo => {
+    todos.forEach((todo) => {
       consoleColor('cyan', '-----');
-      consoleColor(todo.isCompleted ? 'green' : 'red', `${todo.title} ${todo.isCompleted ? '[DONE]' : '[PENDING]'}`);
+      consoleColor(
+        todo.isCompleted ? 'green' : 'red',
+        `${todo.title} ${todo.isCompleted ? '[DONE]' : '[PENDING]'}`
+      );
       consoleColor('cyan', '-----');
     });
   }
@@ -72,5 +75,5 @@ store.setState({
 
 // remove todo
 store.setState({
-  todos: store.state.todos.filter(t => t.id !== 2),
+  todos: store.state.todos.filter((t) => t.id !== 2),
 });

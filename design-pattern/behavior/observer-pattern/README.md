@@ -43,3 +43,19 @@ RxJs is based upon observers. MobX also uses Observer design pattern effectively
 
 From User Interfaces to Data Reactivity, Observer pattern is really handy when some changes/events in a particular
 object has to be reflected on other objects
+
+
+---
+# Observer
+
+## Overview
+
+This pattern suggests, that you have a subject and some observers. Every time you update your subject state, observers get notified about it. This pattern is very handy when you need to tie several objects to each other with abstraction and freedom of implementation. Also, this pattern is a key part of the familiar model-view-controller (MVC) architectural pattern. Strongly used in almost every GUI library.
+
+## Usage
+
+You have a basic Subject class, which has 3 methods: attach, detach, notify and a list of observers, which had implemented the Observer interface. Observer - it’s an interface, which has only one method - update(). You add observers by attach(), remove them by detach(), and by notify() - calling method update() in each of them.
+
+
+
+[Ref](https://www.netguru.com/codestories/top-5-most-used-patterns-in-oop-with-typescript)
